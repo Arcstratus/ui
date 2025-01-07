@@ -13,6 +13,7 @@
 	import * as accordion from '@zag-js/accordion';
 	import { normalizeProps, useMachine } from '@zag-js/svelte';
 	import { setAccordionContext } from './context';
+	import { cn } from '$lib/utils';
 
 	const { children, multiple = true, ...props }: AccordionProps = $props();
 
@@ -26,6 +27,6 @@
 	});
 </script>
 
-<div {...api.getRootProps()} class={props.class}>
+<div {...api.getRootProps()} class={cn('overflow-hidden rounded', props.class)}>
 	{@render children?.()}
 </div>

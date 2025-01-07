@@ -2,6 +2,7 @@
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	export interface AccordionItemTriggerProps extends HTMLAttributes<HTMLDivElement> {
+		key: string;
 		title: string;
 		description?: string;
 		class?: string;
@@ -10,15 +11,23 @@
 
 <script lang="ts">
 	import { getAccordionContext } from './context';
+	import { cn } from '$lib/utils';
+	import { IconChevronDown } from '@tabler/icons-svelte';
 
-	const { title, description, ...props }: AccordionItemTriggerProps = $props();
+	const { key, title, description, ...props }: AccordionItemTriggerProps = $props();
 
 	const ctx = getAccordionContext();
 </script>
 
-<button {...ctx.api.getItemTriggerProps({ value: title })} class={props.class}>
-	<div>{title}</div>
+<button
+	{...ctx.api.getItemTriggerProps({ value: key })}
+	class={cn('group w-full p-2 text-left', props.class)}
+>
+	<span class="between flex gap-4">
+		<h3 class="group-hover:underline">{title}</h3>
+		<IconChevronDown />
+	</span>
 	{#if description}
-		<div>{description}</div>
+		<h4>{description}</h4>
 	{/if}
 </button>

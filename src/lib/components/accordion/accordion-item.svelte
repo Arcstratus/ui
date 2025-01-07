@@ -3,7 +3,7 @@
 	import type { Snippet } from 'svelte';
 
 	export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
-		title: string;
+		key: string;
 		class?: string;
 		children: Snippet;
 	}
@@ -11,12 +11,16 @@
 
 <script lang="ts">
 	import { getAccordionContext } from './context';
+	import { cn } from '$lib/utils';
 
-	const { children, title, ...props }: AccordionItemProps = $props();
+	const { children, key, ...props }: AccordionItemProps = $props();
 
 	const ctx = getAccordionContext();
 </script>
 
-<div {...ctx.api.getItemProps({ value: title })} class={props.class}>
+<div
+	{...ctx.api.getItemProps({ value: key })}
+	class={cn('overflow-hidden border-b border-foreground/20', props.class)}
+>
 	{@render children()}
 </div>
