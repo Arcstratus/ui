@@ -1,3 +1,9 @@
+## 0.2.0 (2025-01-07)
+
+### Feat
+
+- add shadcn-ui and skeleton themes
+
 ## 0.1.0 (2025-01-05)
 
 ### Feat
