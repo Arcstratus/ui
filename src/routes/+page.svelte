@@ -5,7 +5,14 @@
 		AccordionItemContent,
 		AccordionItemTrigger
 	} from '$lib/components/accordion';
+	import { Button } from '$lib';
+	import { IconClick } from '@tabler/icons-svelte';
 </script>
+
+<Button class="min-w-48" onclick={() => console.log('clicked')}>
+	<div>text</div>
+	<IconClick />
+</Button>
 
 <Accordion class="debug">
 	<AccordionItem key="a" class="">

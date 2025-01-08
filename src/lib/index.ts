@@ -5,3 +5,4 @@ export {
 	AccordionItemContent,
 	AccordionItemTrigger
 } from './components/accordion/';
+export { Button } from './components/button/';
