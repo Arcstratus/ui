@@ -21,9 +21,9 @@
 
 <button
 	{...ctx.api.getItemTriggerProps({ value: key })}
-	class={cn('group w-full p-2 text-left', props.class)}
+	class={cn('group w-full p-4 text-left hover:bg-muted', props.class)}
 >
-	<span class="between flex gap-4">
+	<span class="between center flex gap-4">
 		<h3 class="group-hover:underline">{title}</h3>
 		<IconChevronDown />
 	</span>

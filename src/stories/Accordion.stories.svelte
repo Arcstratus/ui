@@ -18,18 +18,28 @@
 </script>
 
 <!-- More on writing stories with args: https://storybook.js.org/docs/writing-stories/args -->
+<Story
+	name="demo"
+	args={{
+		items: [
+			{ key: 'a', title: 'AAA', content: 'a content' },
+			{ key: 'b', title: 'BBB', content: 'bbb' }
+		]
+	}}
+/>
+
 <Story name="default">
-	<Accordion class="debug">
-		<AccordionItem title="a">
-			<AccordionItemTrigger title="a" />
-			<AccordionItemContent title="a">
+	<Accordion>
+		<AccordionItem key="a">
+			<AccordionItemTrigger key="a" title="a" />
+			<AccordionItemContent key="a">
 				<h1>a</h1>
 				<h2>a</h2>
 			</AccordionItemContent>
 		</AccordionItem>
-		<AccordionItem title="b">
-			<AccordionItemTrigger title="b" />
-			<AccordionItemContent title="b">
+		<AccordionItem key="b">
+			<AccordionItemTrigger key="b" title="b" />
+			<AccordionItemContent key="b">
 				<h3>b</h3>
 				<h4>b</h4>
 			</AccordionItemContent>
@@ -38,17 +48,17 @@
 </Story>
 
 <Story name="single">
-	<Accordion class="debug" multiple={false}>
-		<AccordionItem title="a">
-			<AccordionItemTrigger title="a" />
-			<AccordionItemContent title="a">
+	<Accordion multiple={false}>
+		<AccordionItem key="a">
+			<AccordionItemTrigger title="a" key="a" />
+			<AccordionItemContent key="a">
 				<h1>a</h1>
 				<h2>a</h2>
 			</AccordionItemContent>
 		</AccordionItem>
-		<AccordionItem title="b">
-			<AccordionItemTrigger title="b" />
-			<AccordionItemContent title="b">
+		<AccordionItem key="b">
+			<AccordionItemTrigger key="b" title="b" />
+			<AccordionItemContent key="b">
 				<h3>b</h3>
 				<h4>b</h4>
 			</AccordionItemContent>

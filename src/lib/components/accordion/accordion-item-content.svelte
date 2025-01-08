@@ -18,6 +18,6 @@
 	const ctx = getAccordionContext();
 </script>
 
-<div {...ctx.api.getItemContentProps({ value: key })} class={cn('p-2', props.class)}>
+<div {...ctx.api.getItemContentProps({ value: key })} class={cn('p-4', props.class)}>
 	{@render children()}
 </div>

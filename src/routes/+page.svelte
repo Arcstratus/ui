@@ -25,10 +25,3 @@
 		<AccordionItemContent key="b" class="bg-orange-100">Content</AccordionItemContent>
 	</AccordionItem>
 </Accordion>
-
-<Accordion
-	items={[
-		{ value: '1', title: 'Title 1', content: 'Content 1' },
-		{ value: '2', title: 'Title 2', content: 'Content 2' }
-	]}
-/>
