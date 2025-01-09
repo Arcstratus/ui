@@ -6,13 +6,19 @@
 		AccordionItemTrigger
 	} from '$lib/components/accordion';
 	import { Button } from '$lib';
-	import { IconClick } from '@tabler/icons-svelte';
+	import { IconClick, IconUser } from '@tabler/icons-svelte';
+	import { Avatar, AvatarFallback } from '$lib/components/avatar';
+	import IconBookUrl from '$lib/assets/book.svg';
 </script>
 
 <Button class="min-w-48" onclick={() => console.log('clicked')}>
 	<div>text</div>
 	<IconClick />
 </Button>
+
+<Avatar src={IconBookUrl} alt="book">
+	<AvatarFallback><IconUser /></AvatarFallback>
+</Avatar>
 
 <Accordion class="debug">
 	<AccordionItem key="a" class="">
